@@ -10,6 +10,25 @@ Usage
 
 Use as [rocker/tidyverse](https://github.com/rocker-org/rocker-versioned) but replace all `docker` commands with [`nvidia-docker`](https://github.com/NVIDIA/nvidia-docker) commands (must have installed [`nvidia-docker`](https://github.com/NVIDIA/nvidia-docker) on the host system).
 
+-   Pull/Build
+
+``` bash
+docker pull seabbs/tidyverse-gpu
+## Or build 
+## Clone repo and navigate into the repo in the terminal
+docker build . -t tidyverse-gpu
+```
+
+-   Run
+
+``` bash
+nvidia-docker run -d -p 8787:8787 -e USER=tidyverse-gpu -e PASSWORD=tidyverse-gpu --name tidyverse-gpu seabbs/tidyverse-gpu
+## Or build 
+nvidia-docker run -d -p 8787:8787 -e USER=tidyverse-gpu -e PASSWORD=tidyverse-gpu --name tidyverse-gpu tidyverse-gpu
+```
+
+-   Login: Go to `localhost:8787` and sign in using the password and username given with the `docker run` command
+
 Nvidia Test
 -----------
 

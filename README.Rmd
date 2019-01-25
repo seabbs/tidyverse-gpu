@@ -19,6 +19,25 @@ A Docker image based on [rocker/tidyverse](https://github.com/rocker-org/rocker-
 
 Use as [rocker/tidyverse](https://github.com/rocker-org/rocker-versioned) but replace all `docker` commands with [`nvidia-docker`](https://github.com/NVIDIA/nvidia-docker) commands (must have installed [`nvidia-docker`](https://github.com/NVIDIA/nvidia-docker) on the host system).
 
+* Pull/Build
+
+```{bash, eval = FALSE}
+docker pull seabbs/tidyverse-gpu
+## Or build 
+## Clone repo and navigate into the repo in the terminal
+docker build . -t tidyverse-gpu
+```
+
+* Run
+
+```{bash, eval = FALSE}
+nvidia-docker run -d -p 8787:8787 -e USER=tidyverse-gpu -e PASSWORD=tidyverse-gpu --name tidyverse-gpu seabbs/tidyverse-gpu
+## Or build 
+nvidia-docker run -d -p 8787:8787 -e USER=tidyverse-gpu -e PASSWORD=tidyverse-gpu --name tidyverse-gpu tidyverse-gpu
+```
+
+* Login: Go to `localhost:8787` and sign in using the password and username given with the `docker run` command
+
 ## Nvidia Test
 
 Run `nvidia-smi` in a bash shell. If GPU support is working correctly it should return GPU usage and temperature information. 
