@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 
 # tidyverse-gpu
 
-A Docker image based on [rocker/tidyverse](https://github.com/rocker-org/rocker-versioned) including GPU support via CUDA. Based on [work](zhttps://github.com/ecohealthalliance/reservoir/blob/master/Dockerfile.gpu) done by [Noam Ross](https://github.com/noamross). The Docker image contains `xgboost` built for GPU's in both R and Python as well as `tensorflow` for GPU's and the latest stable release of `h2o`. If you wanted to use a different version of CUDA to the one currently installed changed the relevent environment variables in the `Dockerfile` and rebuild the image.
+A Docker image based on [rocker/tidyverse](https://github.com/rocker-org/rocker-versioned) including GPU support via CUDA. Based on [work](zhttps://github.com/ecohealthalliance/reservoir/blob/master/Dockerfile.gpu) done by [Noam Ross](https://github.com/noamross). The Docker image contains `xgboost` built for GPU's in both R and Python as well as the latest stable release of `h2o`. If you wanted to use a different version of CUDA to the one currently installed changed the relevent environment variables in the `Dockerfile` and rebuild the image.
 
 ## Usage
 
