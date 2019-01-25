@@ -54,11 +54,9 @@ default-jre \
 RUN echo "rsession-ld-library-path=$LD_LIBRARY_PATH" | tee -a /etc/rstudio/rserver.conf \
 && echo "Sys.setenv(CUDA_HOME=\"$CUDA_HOME\"); Sys.setenv(CUDA_PATH=\"$CUDA_HOME\"); Sys.setenv(PATH=\"$PATH\")" | tee -a /usr/local/lib/R/etc/Rprofile.site
 
-# Tensorflow, Keras, Xgboost for GPU
+# Python Xgboost for GPU
 RUN pip install wheel setuptools scipy --upgrade
-RUN pip install h5py pyyaml requests Pillow
-RUN pip install  tensorflow-gpu keras 
-RUN pip install dvc xgboost
+RUN pip install xgboost
 
 ### R Xgboost
 RUN git clone --recursive https://github.com/dmlc/xgboost \
